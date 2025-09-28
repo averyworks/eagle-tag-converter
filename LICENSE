@@ -1,0 +1,6 @@
+@"
+Copyright (c) 2025 Avery
+
+このツールはフリーに利用できますが、無保証です。
+自己責任でご利用ください。
+"@ | Set-Content -Encoding UTF8 LICENSE

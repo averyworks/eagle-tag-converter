@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+
+  <title>Eagle Tag Converter</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      color: #3A6E6E;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0.5em 0.5em;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #2E6666;
+    }
+
+    button {
+      font-size: 0.9rem;
+      padding: 0.7em 1.5em;
+      margin: 0.5em 0;
+      background: #4a7272;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4c7c7c;
+    }
+
+    .mode-select {
+      margin: 0.5em 0;
+      padding: 0.5em;
+      border: 1px solid #4a7272;
+      border-radius: 4px;
+    }
+
+    .mode-select label {
+      display: block;
+      /* 縦に並べる */
+      margin-bottom: 6px;
+      /* ボタン同士に余白 */
+    }
+
+    #progress-wrap {
+      margin-top: 20px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    #progress-bar {
+      width: 100%;
+      height: 18px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    #progress-bar::-webkit-progress-bar {
+      border-radius: 4px;
+      background: #eee;
+    }
+
+    #progress-bar::-webkit-progress-value {
+      border-radius: 4px;
+      background: #4a7272;
+    }
+
+    #progress-bar::-moz-progress-bar {
+      border-radius: 4px;
+      background: #4a7272;
+    }
+
+    #progress-text {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #4a7272;
+    }
+
+    #log {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-size: 0.85rem;
+      color: #444;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    select {
+      font-size: 0.9rem;
+      padding: 0.3em 0.6em;
+      margin: 0 4px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      background: #fff;
+      color: #333;
+    }
+
+    input[type="text"] {
+      font-size: 0.9rem;
+      padding: 0.3em 0.6em;
+      margin: 4px 4px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      background: #fff;
+      color: #333;
+    }
+
+    .setting-wrap {
+      background-color: #4a7272;
+      border-radius: 4px;
+      color: #FFF;
+      margin: 0.5em 0;
+      padding: 0.5em 0.5em;
+    }
+
+    .setting {
+      font-weight: 500;
+    }
+
+    .setting label {
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <h2>Eagle Tag Converter</h2>
+
+  <div>
+    <button id="selectLib">ライブラリを選択 / Select Library</button>
+
+    </button>
+    <span id="libPath">未選択 / Not selected</span>
+  </div>
+
+  <div class="mode-select">
+    <label><input type="radio" name="mode" value="separator" checked> 01. 区切り変換 / Separator Conversion</label>
+    <label><input type="radio" name="mode" value="category"> 02.区切り + カテゴリ名変換 / Separator + Category Conversion</label>
+    <label><input type="radio" name="mode" value="catOnly"> 03.カテゴリ名変換 / Category Conversion</label>
+
+  </div>
+
+  <div class="setting-wrap">
+
+
+    <!-- 区切り変換モード -->
+    <div id="mode-separator" class="setting">
+      <label>区切り/ Separator：</label>
+      <select id="from">
+        <option value="：">：</option>
+        <option value="__">__</option>
+        <option value="_">_</option>
+      </select>
+      →
+      <select id="to">
+        <option value="__">__</option>
+        <option value="_">_</option>
+        <option value="：">：</option>
+      </select>
+    </div>
+
+    <!-- 区切り文字＆カテゴリ変換モード -->
+    <div id="mode-category" style="display:none;" class="setting">
+      <label>カテゴリ名 / Category：</label>
+      <input id="oldCat" type="text" placeholder="例: photograph">
+      <select id="oldSep">
+        <option value="：">：</option>
+        <option value="__">__</option>
+        <option value="_">_</option>
+      </select>
+      →
+      <input id="newCat" type="text" placeholder="例: photo">
+
+      <select id="newSep">
+        <option value="：">：</option>
+        <option value="__">__</option>
+        <option value="_">_</option>
+      </select>
+    </div>
+
+    <!-- カテゴリ変換モード -->
+    <div id="mode-catOnly" style="display:none;" class="setting">
+      <label>カテゴリ名 / Category：</label>
+      <input id="oldCatOnly" type="text" placeholder="例: photograph">
+      <select id="sepCatOnly">
+        <option value="：">：</option>
+        <option value="__">__</option>
+        <option value="_">_</option>
+      </select>
+
+      →
+      <input id="newCatOnly" type="text" placeholder="例: photo">
+      <span id="sepPreview" style="margin-left:4px;"></span>
+    </div>
+  </div>
+
+  <button id="convert">変換開始 / Start Conversion</button>
+  <button id="restore-button">復元開始 / Restore Backup</button>
+  <button id="delete-backups">バックアップ削除 / Delete Backups</button>
+
+  <div id="progress-wrap" style="margin-top:10px;">
+    <progress id="progress-bar" value="0" max="100" style="width:100%;"></progress>
+    <div id="progress-text">Progress: 0% (0/0)</div>
+  </div>
+
+  <div id="log" style="margin-top:10px;">ここに変換結果が表示されます/ Conversion results will be shown here</div>
+
+
+
+  <script src="renderer.js"></script>
+</body>
+
+</html>

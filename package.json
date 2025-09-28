@@ -1,0 +1,42 @@
+{
+  "name": "eagle-tag-converter",
+  "version": "1.0.0",
+  "description": "A tool to batch-convert separator characters and category names in Eagle tags.",
+  "author": "averyworks",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.averyworks.eagletagconverter",
+    "productName": "Eagle Tag Converter",
+    "extraResources": [
+      "readme.txt"
+    ],
+    "files": [
+      "**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!node_modules/.bin",
+      "!.gitignore",
+      "!**/*.map"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      
+    "signAndEditExecutable": false
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    }
+  }
+}
