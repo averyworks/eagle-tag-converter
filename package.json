@@ -31,7 +31,10 @@
       "buildResources": "build"
     },
     "win": {
-      "target": "portable",
+      "target": [
+        "portable",
+        "nsis"
+      ],
       "icon": "build/icon.ico",
       "signAndEditExecutable": true
     },

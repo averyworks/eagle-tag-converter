@@ -1,8 +1,9 @@
+※ This readme is provided in Japanese.  
+For English and Traditional Chinese versions, please visit the GitHub Releases page:  
+👉 https://github.com/averyworks/eagle-tag-converter/releases/latest
+
 # Eagle Tag Converter
 
-※ この readme は日本語版です。  
-英語版・繁體中文版の説明書は GitHub Releases ページに掲載しています：  
-👉 [Releases ページ](https://github.com/averyworks/eagle-tag-converter/releases/latest)
 
 ---
 
@@ -24,9 +25,15 @@ Eagle のタグ名に使われている「区切り文字」や「カテゴリ�
 ## インストール方法
 
 ### Windows
-インストールは不要です。  
-配布された `Eagle Tag Converter-win-x.x.x.zip` を解凍後、フォルダ内の `Eagle Tag Converter.exe` をダブルクリックしてください。  
-不要になった場合はフォルダごと削除すればOKです。  
+- **Portable版**  
+  配布された `Eagle Tag Converter-win-x.x.x.zip` を解凍後、フォルダ内の `Eagle Tag Converter.exe` をダブルクリックしてください。  
+  アンインストールは、解凍したフォルダを削除するだけです。  
+
+- **Installer版**  
+  配布された `Eagle Tag Converter Setup x.x.x.exe` を実行してください。  
+  インストーラが起動し、スタートメニューに登録されます。  
+  アンインストールは Windows の「アプリと機能」から行えます。  
+
 
 ### Mac
 配布された `Eagle Tag Converter-x.x.x.dmg` を開き、`Eagle Tag Converter.app` を Applications フォルダにドラッグしてください。  
@@ -38,9 +45,13 @@ Eagle のタグ名に使われている「区切り文字」や「カテゴリ�
 ## アップデート方法
 
 ### Windows
-- 新しいバージョンが出たら、最新版の `Eagle Tag Converter-win-x.x.x.zip` をダウンロードして解凍してください。  
-- 古いフォルダは削除して構いません。  
-- レジストリなどは使っていないため、再インストールやアンインストール作業は不要です。  
+- **Portable版**  
+  新しいバージョンの zip をダウンロードして解凍してください。  
+  古いフォルダは削除して構いません。  
+
+- **Installer版**  
+  新しいバージョンの `Setup.exe` を実行してください。  
+  既存の環境を上書きして更新されます（アンインストールは不要です）。  
 
 ### Mac
 - 新しいバージョンが出たら、最新版の `Eagle Tag Converter-x.x.x.dmg` をダウンロードしてください。  

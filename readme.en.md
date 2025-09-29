@@ -1,9 +1,5 @@
 # Eagle Tag Converter
 
-※ This readme is the English version.  
-日本語版・繁體中文版の説明書は GitHub Releases ページに掲載しています：  
-👉 https://github.com/averyworks/eagle-tag-converter/releases/latest
-
 ---
 
 ## Overview
@@ -24,10 +20,15 @@ Get the latest build from GitHub Releases:
 ## Installation
 
 ### Windows
-No installation is required.  
-Download and unzip `Eagle Tag Converter-win-x.x.x.zip`.  
-Double-click `Eagle Tag Converter.exe` inside the folder to launch the app.  
-To uninstall, simply delete the unzipped folder.  
+- **Portable version**  
+  Download and unzip `Eagle Tag Converter-win-x.x.x.zip`.  
+  Double-click `Eagle Tag Converter.exe` inside the folder to launch the app.  
+  To uninstall, simply delete the unzipped folder.  
+
+- **Installer version**  
+  Run `Eagle Tag Converter Setup x.x.x.exe`.  
+  The installer will start and add a Start Menu entry.  
+  To uninstall, go to “Apps & Features” in Windows settings.  
 
 ### Mac
 Download `Eagle Tag Converter-x.x.x.dmg` and open it.  
@@ -40,9 +41,13 @@ To uninstall, just move the app to the Trash.
 ## Update
 
 ### Windows
-- When a new version is released, download and unzip the latest `Eagle Tag Converter-win-x.x.x.zip`.  
-- You may delete the old folder.  
-- No registry or system modifications are made, so no reinstall/uninstall steps are needed.  
+- **Portable version**  
+  Download and unzip the latest zip file.  
+  You may delete the old folder.  
+
+- **Installer version**  
+  Run the new `Setup.exe`.  
+  It will overwrite the existing installation (no need to uninstall first).    
 
 ### Mac
 - When a new version is released, download the latest `Eagle Tag Converter-x.x.x.dmg`.  
