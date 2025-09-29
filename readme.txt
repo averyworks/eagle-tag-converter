@@ -23,30 +23,25 @@ Eagle のタグ名に使われている「区切り文字」や「カテゴリ�
 
 ## インストール方法
 
-### Windows
 インストールは不要です。  
-配布された `Eagle Tag Converter-win-x.x.x.zip` を解凍後、フォルダ内の `Eagle Tag Converter.exe` をダブルクリックしてください。  
-不要になった場合はフォルダごと削除すればOKです。  
+zip を解凍後すぐに利用でき、レジストリやシステム環境を汚しません。  
+
+### Windows
+- 配布された `Eagle Tag Converter-win-x.x.x.zip` を解凍してください。  
+- フォルダ内の `Eagle Tag Converter.exe` をダブルクリックすると起動します。  
+- アンインストールは、解凍したフォルダを削除するだけです。  
 
 ### Mac
-配布された `Eagle Tag Converter-x.x.x.dmg` を開き、`Eagle Tag Converter.app` を Applications フォルダにドラッグしてください。  
-不要になった場合は Finder からアプリを削除するだけです。  
-※ Mac 版は未検証です。必ずライブラリをバックアップしてからご利用ください。  
+- 配布された `Eagle Tag Converter-mac-x.x.x.zip` を解凍してください。  
+- フォルダ内の `Eagle Tag Converter.app` を開くと起動します。  
+- アンインストールは、アプリをゴミ箱に入れるだけです。  
+- ※ Mac 版は未検証です。必ずライブラリをバックアップしてからご利用ください。  
 
 ---
 
 ## アップデート方法
-
-### Windows
-- 新しいバージョンが出たら、最新版の `Eagle Tag Converter-win-x.x.x.zip` をダウンロードして解凍してください。  
+- 新しいバージョンが公開された場合は、最新版の zip をダウンロードして解凍してください。  
 - 古いフォルダは削除して構いません。  
-- レジストリなどは使っていないため、再インストールやアンインストール作業は不要です。  
-
-### Mac
-- 新しいバージョンが出たら、最新版の `Eagle Tag Converter-x.x.x.dmg` をダウンロードしてください。  
-- dmg を開き、新しい `Eagle Tag Converter.app` を Applications フォルダにドラッグして上書きしてください。  
-- 上書きに失敗した場合は、先に古いアプリをゴミ箱に移動してからコピーしてください。  
- 
 
 ---
 

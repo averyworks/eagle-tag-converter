@@ -24,21 +24,31 @@ Get the latest build from GitHub Releases:
 ## Installation
 
 ### Windows
-- Run `Eagle Tag Converter Setup x.x.x.exe`.  
-- The installer will start, and a shortcut will be added to the Start Menu.  
-- To uninstall, use **Apps & Features** in Windows settings.  
+No installation is required.  
+Download and unzip `Eagle Tag Converter-win-x.x.x.zip`.  
+Double-click `Eagle Tag Converter.exe` inside the folder to launch the app.  
+To uninstall, simply delete the unzipped folder.  
 
 ### Mac
-- Open `Eagle Tag Converter-x.x.x.dmg` and drag the app into the **Applications** folder.  
-- To uninstall, simply delete the app from Finder.  
-- *Note: Mac version is untested. Please back up your Eagle library before use.*  
+Download `Eagle Tag Converter-x.x.x.dmg` and open it.  
+Drag `Eagle Tag Converter.app` into the Applications folder.  
+To uninstall, just move the app to the Trash.  
+*Note: Mac version is untested. Please back up your Eagle library before use.*  
 
 ---
 
 ## Update
-- Download the latest file when a new version is released.  
-- **Windows**: Run the new `Setup.exe` to update (no uninstall needed).  
-- **Mac**: Delete the old app, then copy the new app from dmg to Applications again.  
+
+### Windows
+- When a new version is released, download and unzip the latest `Eagle Tag Converter-win-x.x.x.zip`.  
+- You may delete the old folder.  
+- No registry or system modifications are made, so no reinstall/uninstall steps are needed.  
+
+### Mac
+- When a new version is released, download the latest `Eagle Tag Converter-x.x.x.dmg`.  
+- Open the dmg and drag the new `Eagle Tag Converter.app` into the Applications folder to overwrite.  
+- If overwrite fails, delete the old app first, then copy the new one.  
+
 
 ---
 

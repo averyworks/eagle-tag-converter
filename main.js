@@ -430,7 +430,7 @@ function createWindow() {
             label: "ヘルプ",
             submenu: [
                 {
-                    label: "説明書を開く (readme.txt)",
+                    label: "Open Readme (readme.txt)",
                     click: () => {
                         // インストール先にパッケージされた readme.txt を開く
                         const readmePath = path.join(process.resourcesPath, "readme.txt");
@@ -438,9 +438,15 @@ function createWindow() {
                     }
                 },
                 {
-                    label: "GitHub Releases ページを開く",
+                    label: "Open GitHub Releases",
                     click: () => {
                         shell.openExternal("https://github.com/averyworks/eagle-tag-converter/releases/latest");
+                    }
+                },
+                {
+                    label: "Open tagflot Page",
+                    click: () => {
+                        shell.openExternal("https://flotidot.com/tools/tagflot/index.html");
                     }
                 }
             ]

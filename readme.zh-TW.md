@@ -24,21 +24,31 @@
 ## 安裝方法
 
 ### Windows
-- 執行 `Eagle Tag Converter Setup x.x.x.exe`。  
-- 安裝程式將啟動，並在開始功能表中建立捷徑。  
-- 移除請透過 Windows 設定中的 **應用程式與功能**。  
+不需要安裝。  
+下載並解壓縮 `Eagle Tag Converter-win-x.x.x.zip`。  
+在資料夾中雙擊 `Eagle Tag Converter.exe` 即可啟動。  
+移除時，只需刪除解壓縮後的資料夾即可。  
 
 ### Mac
-- 開啟 `Eagle Tag Converter-x.x.x.dmg`，將應用程式拖曳至 **Applications** 資料夾。  
-- 移除只需在 Finder 中刪除該應用程式。  
-- ※ Mac 版本尚未測試，建議先完整備份 Eagle 資料庫。  
+下載並開啟 `Eagle Tag Converter-x.x.x.dmg`。  
+將 `Eagle Tag Converter.app` 拖曳到 Applications 資料夾。  
+移除時，將應用程式移至垃圾桶即可。  
+※ Mac 版本尚未測試，請務必先備份您的 Eagle 資料庫。  
 
 ---
 
 ## 更新方法
-- 有新版本時，請下載最新版。  
-- **Windows**：直接執行新的 `Setup.exe` 會覆蓋更新（不需要先移除）。  
-- **Mac**：刪除舊應用程式，再從 dmg 複製新版到 Applications。  
+
+### Windows
+- 發佈新版本時，請下載並解壓縮最新版的 `Eagle Tag Converter-win-x.x.x.zip`。  
+- 舊的資料夾可以直接刪除。  
+- 本工具不會修改登錄檔或系統，因此無需重新安裝或解除安裝。  
+
+### Mac
+- 發佈新版本時，請下載最新版的 `Eagle Tag Converter-x.x.x.dmg`。  
+- 開啟 dmg，將新的 `Eagle Tag Converter.app` 拖曳到 Applications 資料夾進行覆蓋。  
+- 如果覆蓋失敗，請先刪除舊的應用程式，再複製新的。  
+
 
 ---
 
