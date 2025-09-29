@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, ipcMain , Menu, shell } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, Menu, shell } = require('electron');
 const fs = require('fs');
 const path = require('path');
 
@@ -20,6 +20,7 @@ function createWindow() {
     const win = new BrowserWindow({
         width: 900,
         height: 700,
+        icon: path.join(__dirname, 'build', 'icon.ico'),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
@@ -412,40 +413,40 @@ ipcMain.handle('delete-backups', async (event, { libPath }) => {
 
 //ヘルプ
 function createWindow() {
-  const win = new BrowserWindow({
-    width: 900,
-    height: 700,
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-      contextIsolation: true
-    }
-  });
-
-  win.loadFile("index.html");
-
-  // ヘルプメニューを作成
-  const template = [
-    {
-      label: "ヘルプ",
-      submenu: [
-        {
-          label: "説明書を開く (readme.txt)",
-          click: () => {
-            // インストール先にパッケージされた readme.txt を開く
-            const readmePath = path.join(process.resourcesPath, "readme.txt");
-            shell.openPath(readmePath);
-          }
-        },
-        {
-          label: "GitHub Releases ページを開く",
-          click: () => {
-            shell.openExternal("https://github.com/averyworks/eagle-tag-converter/releases/latest");
-          }
+    const win = new BrowserWindow({
+        width: 900,
+        height: 700,
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js"),
+            contextIsolation: true
         }
-      ]
-    }
-  ];
+    });
 
-  const menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
+    win.loadFile("index.html");
+
+    // ヘルプメニューを作成
+    const template = [
+        {
+            label: "ヘルプ",
+            submenu: [
+                {
+                    label: "説明書を開く (readme.txt)",
+                    click: () => {
+                        // インストール先にパッケージされた readme.txt を開く
+                        const readmePath = path.join(process.resourcesPath, "readme.txt");
+                        shell.openPath(readmePath);
+                    }
+                },
+                {
+                    label: "GitHub Releases ページを開く",
+                    click: () => {
+                        shell.openExternal("https://github.com/averyworks/eagle-tag-converter/releases/latest");
+                    }
+                }
+            ]
+        }
+    ];
+
+    const menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
 }
